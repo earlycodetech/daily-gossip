@@ -1,0 +1,114 @@
+.navbar-nav{
+    background-image: linear-gradient(293deg, #de4747 20%,#7e0000 85% );
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px 10px;
+}
+
+.navbar-nav .nav-link:hover{
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* POSTS */
+
+.post-wrap {
+    position: relative;
+}
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #00000059;
+}
+.post-wrap:hover .overlay{
+    background-color: #0000001b;
+    transition: background-color .45s ease;
+}
+
+.post-wrap .caption{
+    position: absolute;
+    color: #ffffff;
+    z-index: 9;
+    bottom: 20px;
+    left: 33px;
+}
+
+/* OWL CAROUSEL */
+
+.owl-nav{
+    display: flex;
+    justify-content: center;
+    gap: 214px;
+    margin-top: 20px;
+}
+.owl-nav > button{
+    font-size: 30px !important;
+    box-shadow: 0 0 5px 0 grey;
+    width: 40px;
+}
+.owl-nav > button:active{
+    box-shadow: inset 0 0 5px 0 grey;
+}
+
+.owl-carousel .owl-item{
+    scale: 0.8;
+    transition: scale .45s ease;
+    border-radius: 10px;
+}
+.owl-carousel .owl-item .overlay{
+    border-radius: 10px;
+}
+.owl-carousel .owl-item img{
+    border-radius: 10px;
+}
+.owl-carousel .center{
+    scale: 1.2;
+    box-shadow: 0 0 5px 0 grey;
+}
+
+
+
+/* reg */
+
+.reg-hero{
+    height: 100vh;
+    position: relative;
+}
+.reg-hero video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.reg-hero .container{
+    position: absolute;
+    z-index: 9 !important;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10%;
+}
+
+
+.reg-hero .container .card{
+    max-width: 600px;
+    background-color: #50313170;
+    transition: scale .45s;
+    scale: 0.2;
+}
+.reg-hero .container #logForm{
+    max-width: 400px;
+}
+.reg-hero .container .card input::placeholder{
+    color: #ffffff;
+}
+
+.reg-hero .cap a:hover{
+    color: #ffffff !important;
+}
+
+.reg-hero .container .card.show-form{
+    scale: 1;
+}
