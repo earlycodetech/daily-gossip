@@ -1,3 +1,6 @@
+<?php 
+    include "assets/includes/sessions.inc.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,69 +22,27 @@
 </head>
 <body>
     <!-- Navbar -->
-    <section>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-                <img src="assets/img/logo.png" height="40" alt="">
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="fa text-dark fa-bars"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a class="nav-link"  href="#">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link"  href="#">Contact</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link"  href="#">Sign Up</a>
-                  </li>
-                  <li class="nav-item">
-                    <form  role="search">
-                        <div class="input-group">
-                          <input class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-sm btn-outline-light" type="submit">
-                              <i class="fa fa-search"></i>
-                          </button>
-                        </div>
-                      </form>
-                  </li>
-                </ul>
-                
-              </div>
-            </div>
-          </nav>
-    </section>
+    <?php include_once "assets/includes/nav.inc.php"; ?>
 
     <!-- Hero -->
     <section id="reg-hero" class="reg-hero">
        <video src="assets/img/bg.mp4" type="video/mp4" autoplay muted loop></video>
        <div class="overlay"></div>
        <div class="container">
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            <form class="card mx-auto show-form" id="regForm">
+            <?php echo successMsg(); echo errorMsg(); ?>
+            <form action="assets/includes/reg.inc.php" method="POST" class="card mx-auto show-form" id="regForm">
                 <div class="card-header">
                     <p class="fs-4 text-white fw-bold">Create an Account</p>
                 </div>
                 <div class="card-body row">
                     <div class="col-md-6 mb-2">
-                        <input type="text" placeholder="Full Name" class="form-control bg-transparent text-white">
+                        <input type="text" name="fname" placeholder="Full Name" class="form-control bg-transparent text-white">
                     </div>
                     <div class="col-md-6 mb-2">
-                        <input type="email" placeholder="Email" class="form-control bg-transparent text-white">
+                        <input type="email" name="email" placeholder="Email" class="form-control bg-transparent text-white">
                     </div>
                     <div class="col-md-6 mb-2">
-                        <input type="tel" placeholder="Phone" class="form-control bg-transparent text-white">
+                        <input type="tel" name="phone" placeholder="Phone" class="form-control bg-transparent text-white">
                     </div>
                     
                     <div class="col-md-6 mb-2">
@@ -334,7 +295,7 @@
                         </select>
                     </div>
                     <div class="col-md-6 mb-2">
-                        <input type="text" placeholder="Date of Birth" onfocus="this.type='date'" class="form-control bg-transparent text-white">
+                        <input type="text" name="dob" placeholder="Date of Birth" onfocus="this.type='date'" class="form-control bg-transparent text-white">
                     </div>
                     <div class="col-md-6 mb-2">
                         <select name="gender" onclick="this.classList.toggle('text-white')" class="form-control bg-transparent text-white">
@@ -344,13 +305,13 @@
                         </select>
                     </div>
                     <div class="col-md-6 mb-2">
-                        <input type="password" placeholder="Password" autocomplete="off" class="form-control bg-transparent text-white">
+                        <input type="password" name="pass" placeholder="Password" autocomplete="off" class="form-control bg-transparent text-white">
                     </div>
                     <div class="col-md-6 mb-2">
-                        <input type="password" placeholder="Confirm Password" autocomplete="off" class="form-control bg-transparent text-white">
+                        <input type="password" name="con_pass" placeholder="Confirm Password" autocomplete="off" class="form-control bg-transparent text-white">
                     </div>
                     <div class="col-12 py-3 d-md-flex justify-content-between">
-                        <button type="submit" class="btn btn-outline-light">Create Account</button>
+                        <button type="submit" name="register" class="btn btn-outline-light">Create Account</button>
                         <div class="cap">
                             <a href="#" onclick="changeForm()" class="nav-link text-info">Login Instead</a>
                             <a href="#" class="nav-link text-info">Forgot Password</a>
