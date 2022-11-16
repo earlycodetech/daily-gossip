@@ -1,3 +1,6 @@
+<?php
+    require "assets/includes/class.autoload.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

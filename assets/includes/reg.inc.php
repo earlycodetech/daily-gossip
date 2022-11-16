@@ -13,9 +13,10 @@
          $dob = $_POST['dob'];
          $gender = $_POST['gender'];
          $pass = $_POST['pass'];
+         $news = $_POST['news'];
          $con_pass = $_POST['con_pass'];
 
 
-         $user = new UserController($fname,$email,$phone,$country,$dob,$gender,$pass);
+         $user = new UserController($fname,$email,$phone,$country,$dob,$gender,$pass,$news);
          $user->Validate($con_pass);
     }

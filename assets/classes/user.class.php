@@ -22,12 +22,20 @@
 
 
     // User::showName();
-    class User {
-        private $fname;
-        private $email;
-        private $phone;
-        private $country;
-        private $dob;
-        private $gender;
-        private $pass;
+    include "dbh.class.php";
+    class User extends Dbh {
+     
+
+       protected function signUp($fname,$email,$phone,$country,$dob,$gender,$pass,$news,$date){
+        $sql = $this->connect()->prepare("INSERT INTO users(fname,email,phone,country,dob,gender,passwords,news,date_created) VALUES(?,?,?,?,?,?,?,?,?)");
+        if ($sql->execute(array($fname,$email,$phone,$country,$dob,$gender,$pass,$news,$date))) {
+            return true;
+            $sql = null;
+            exit();
+        }else{
+            return false;
+            $sql = null;
+            exit();
+        }
+       }
     }

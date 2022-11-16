@@ -9,9 +9,10 @@
         private $dob;
         private $gender;
         private $pass;
+        private $news;
 
 
-        public function __construct($fname,$email,$phone,$country,$dob,$gender,$pass)
+        public function __construct($fname,$email,$phone,$country,$dob,$gender,$pass,$news)
         {
             $this->fname = $fname;
             $this->email = $email;
@@ -20,6 +21,7 @@
             $this->dob = $dob;
             $this->gender = $gender;
             $this->pass = $pass;
+            $this->news = $news;
         }
 
         private function checkEmptyInput(){
@@ -65,8 +67,17 @@
             //     header("Location: ../../signup");
             // }
             else{
-                $_SESSION['success'] = "Congrats";
-                header("Location: ../../signup");
+            //    echo $date = date("Y-m-d h:i:s");
+                $date = date("Y-m-d");
+                $password = password_hash($this-> pass, PASSWORD_DEFAULT);
+
+                if ($this->signUp($this->fname,$this->email,$this->phone,$this->country,$this->dob,$this->gender,$password,$this->news,$date) ===  true) {
+                    $_SESSION['success'] = "Sign Up Successful!";
+                    header("Location: ../../signup");
+                }else{
+                    $_SESSION['error'] = "Ooops! Something went wrong";
+                    header("Location: ../../signup"); 
+                }
             }
         }
     }

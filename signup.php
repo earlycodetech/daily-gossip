@@ -309,7 +309,13 @@
                     </div>
                     <div class="col-md-6 mb-2">
                         <input type="password" name="con_pass" placeholder="Confirm Password" autocomplete="off" class="form-control bg-transparent text-white">
+                    </div><div class="col-12 mb-2">
+                        <div class="form-check">
+                            <input type="checkbox" name="news" id="news" class="form-check-input">
+                            <label for="news" class="text-white form-check-label">Subscribe to our newsletter</label>
+                        </div>
                     </div>
+
                     <div class="col-12 py-3 d-md-flex justify-content-between">
                         <button type="submit" name="register" class="btn btn-outline-light">Create Account</button>
                         <div class="cap">
