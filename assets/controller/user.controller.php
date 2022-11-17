@@ -82,7 +82,11 @@
         }
 
         public  function Login($email,$pass){
-            if ($this->userLogin($email,$pass) === false) {
+            if ($this->checkValidEmail() === false) {
+                $_SESSION['error'] = "Invalid Email!";
+                header("Location: ../../signup");
+            }
+            elseif ($this->userLogin($email,$pass) === false) {
                 header("Location: ../../signup"); 
             }else{
                 $row = $this->userLogin($email,$pass);
