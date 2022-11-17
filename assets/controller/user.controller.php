@@ -12,7 +12,7 @@
         private $news;
 
 
-        public function __construct($fname,$email,$phone,$country,$dob,$gender,$pass,$news)
+        public function setVal($fname,$email,$phone,$country,$dob,$gender,$pass,$news)
         {
             $this->fname = $fname;
             $this->email = $email;
@@ -78,6 +78,17 @@
                     $_SESSION['error'] = "Ooops! Something went wrong";
                     header("Location: ../../signup"); 
                 }
+            }
+        }
+
+        public  function Login($email,$pass){
+            if ($this->userLogin($email,$pass) === false) {
+                header("Location: ../../signup"); 
+            }else{
+                $row = $this->userLogin($email,$pass);
+                $_SESSION['user'] = $row['id'];
+                $_SESSION['name'] = $row['fname'];
+                header("Location: ../../blog/dashboard"); 
             }
         }
     }

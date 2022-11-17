@@ -28,3 +28,9 @@
         return $output;
     }
    }
+
+   function authGuard(){
+        if(!isset($_SESSION['user'])){
+            header("Location: ../signup");
+        }  
+   }

@@ -311,7 +311,7 @@
                         <input type="password" name="con_pass" placeholder="Confirm Password" autocomplete="off" class="form-control bg-transparent text-white">
                     </div><div class="col-12 mb-2">
                         <div class="form-check">
-                            <input type="checkbox" name="news" id="news" class="form-check-input">
+                            <input type="checkbox" value="subscribe" name="news" id="news" class="form-check-input">
                             <label for="news" class="text-white form-check-label">Subscribe to our newsletter</label>
                         </div>
                     </div>
@@ -325,20 +325,20 @@
                     </div>
                 </div>
             </form>
-            <form class="card mx-auto d-none" id="logForm">
+            <form class="card mx-auto d-none" action="assets/includes/login.inc.php" id="logForm" method="POST">
                 <div class="card-header">
                     <p class="fs-4 text-white fw-bold">Login to your Account</p>
                 </div>
                 <div class="card-body row">
                     <div class="col-md-6 mb-2">
-                        <input type="email" placeholder="Email" class="form-control bg-transparent text-white">
+                        <input type="email" name="email" placeholder="Email" class="form-control bg-transparent text-white">
                     </div>
                     <div class="col-md-6 mb-2">
-                        <input type="password" placeholder="Password" autocomplete="off" class="form-control bg-transparent text-white">
+                        <input type="password" name="pass" placeholder="Password" autocomplete="off" class="form-control bg-transparent text-white">
                     </div>
                     
                     <div class="col-12 py-3 d-md-flex justify-content-between">
-                        <button type="submit" class="btn btn-outline-light">Login</button>
+                        <button type="submit" name="login" class="btn btn-outline-light">Login</button>
                         <div class="cap">
                             <a href="#" onclick="changeForm()" class="nav-link text-info">Create an Account</a>
                             <a href="#" class="nav-link text-info">Forgot Password</a>

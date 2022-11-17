@@ -15,8 +15,11 @@
          $pass = $_POST['pass'];
          $news = $_POST['news'];
          $con_pass = $_POST['con_pass'];
+         if ($news === 'subscribe') {
+            $news = true;
+         }
 
-
-         $user = new UserController($fname,$email,$phone,$country,$dob,$gender,$pass,$news);
+         $user = new UserController;
+         $user ->setVal($fname,$email,$phone,$country,$dob,$gender,$pass,$news);
          $user->Validate($con_pass);
     }
