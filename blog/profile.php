@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="../assets/lib/owl-carousel/css/owl.theme.default.min.css">
 </head>
 <body>
-    <div id="loader">
+    <!-- <div id="loader">
         <div class="loading">
             <span style="--i: 1.12s;">L</span>
             <span style="--i: 1.13s;">O</span>
@@ -38,12 +38,66 @@
             <span style="--i: 1.19s;">.</span>
             <span style="--i: 1.19s; ">.</span>
         </div>
-    </div>
+    </div> -->
     <!-- Navbar -->
     <?php include_once "../assets/includes/das-nav.php" ?>
     <!-- Main Content -->
-    <main class="main-content">
-    
+    <main class="main-content container">
+        <?php 
+            $user = new User;
+            $row = $user->getUser($_SESSION['user']);
+            // print_r($row);
+            echo successMsg(); echo errorMsg();
+        ?>
+        <div class="card">
+            <form action="../assets/includes/update.inc.php" method="post" enctype="multipart/form-data" class="card-body">
+                <img src="../assets/img/logo.png" class="w-25 rounded">
+                <input type="file" name="file" class="form-control my-2">
+                <button name="updatePic" class="btn btn-primary">Submit</button>
+            </form>
+
+            <form action="../assets/includes/update.inc.php" onsubmit="return confirm('Are you sure?')" method="POST" class="card-body row">
+                <div class="col-md-6 mb-3">
+                    <label  class="form-lable mb-2">Full Name:</label>
+                    <input type="text" value="<?php echo $row['fname']; ?>" name="fname" class="form-control">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label  class="form-lable mb-2">Email:</label>
+                    <input type="email" value="<?php echo $row['email']; ?>" readonly class="form-control">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label  class="form-lable mb-2">Phone:</label>
+                    <input type="tel" name="phone" value="<?php echo $row['phone']; ?>"  class="form-control">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label  class="form-lable mb-2">Dob:</label>
+                    <input type="date" name="dob" value="<?php echo $row['dob']; ?>"  class="form-control">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label  class="form-lable mb-2">Gender:</label>
+                    <select name="gender" id="" class="form-select">
+                        <option selected><?php echo $row['gender']; ?></option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3 d-flex align-items-center gap-1">
+                    <input type="checkbox" 
+                        name="news"
+                        class="form-check" 
+                        value="subscribe"
+                        <?php if($row['news'] == true){ ?>
+                            checked
+                        <?php } ?>
+                    />
+                    <label  class="form-lable mb-2">Subscribe to News Letter:</label>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" name="update" class="btn btn-primary">Update </button>
+                </div>
+            </form>
+        </div>
     </main>
 
 

@@ -29,7 +29,7 @@
 
           }
           else{
-            require_once "../classes/". $className . $ext;
+            require_once "../assets/classes/". $className . $ext;
     
           }
     

@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    // session_start();
     // class User {
     //     private $name = "sam122";
     //     public static $old = 12345;
@@ -65,7 +65,41 @@
            return $row;
        }
 
-       protected function updteUser(){
-        
+       public  function getUser($id){
+        $sql = $this ->connect()->prepare("SELECT * FROM users WHERE id = ?");
+        if ($sql->execute(array($id))) {
+            return $sql->fetch();
+            $sql = null;
+            exit();
+        }else{
+            $sql = null;
+            return null;
+            exit();
+        };
        }
+       protected function updateUser($fname,$phone,$dob,$gender,$news,$id){
+            $sql = $this->connect()->prepare("UPDATE users SET fname = ?, phone = ?, dob = ?, gender = ?, news = ? WHERE id = ?");
+            if($sql->execute(array($fname,$phone,$dob,$gender,$news,$id))){
+                $sql = null;
+                return true;
+                exit();
+            }else{
+                $sql = null;
+                return false;
+                exit();
+            }
+       }
+       protected function updateUserAvatar($pic,$id){
+            $sql = $this->connect()->prepare("UPDATE users SET avatars = ? WHERE id = ?");
+            if($sql->execute(array($pic,$id))){
+                $sql = null;
+                return true;
+                exit();
+            }else{
+                $sql = null;
+                return false;
+                exit();
+            }
+       }
+       
     }
