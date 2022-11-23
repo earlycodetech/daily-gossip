@@ -82,6 +82,7 @@
             }
         }
 
+        // LOGIN METHOD
         public  function Login($email,$pass){
             $this->email = $email;
             if ($this->checkValidEmail() === false) {
@@ -94,6 +95,7 @@
                 session_start();
                 $row = $this->userLogin($email,$pass);
                 $_SESSION['user'] = $row['id'];
+                $_SESSION['img'] = $row['avatars'];
                 $_SESSION['name'] = $row['fname'];
                 header("Location: ../../blog/dashboard"); 
             }
@@ -148,6 +150,7 @@
                 }else{
                    if ($this -> updateUserAvatar($newName,$_SESSION['user'])) {
                     $_SESSION['success'] =  'Profile Picture Updated';
+                    $_SESSION['img'] = $newName;
                     header("Location: ../../blog/profile"); 
                    }else{
                     $_SESSION['error'] =  '!Ooops, Something Went wrong!';

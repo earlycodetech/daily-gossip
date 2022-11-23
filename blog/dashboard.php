@@ -45,24 +45,17 @@
     <main class="main-content">
         <div class="container">
             <h2 class="fw-light mb-3">Dashboard</h2>
+            <?php echo successMsg(); echo errorMsg(); ?>
 
             <div class="row">
                 <h5 class="fw-light text-end mb-4">
                     All Posts
                 </h5>
-                <a href="#"  class="col-md-4 mb-3 text-decoration-none text-dark">
-                    <div class="card shadow">
-                        <img src="../assets/img/posts/news-1.jpg" alt="" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="fw-light">
-                                <span class="fw-bold">Title:</span> This is a title
-                            </h5>
-                            <p>
-                                <span class="fw-bold">Post Date:</span> Thursday, 19th Jan 2022 6:00 pm
-                            </p>
-                        </div>
-                    </div>
-                </a>
+                <?php
+                    $post = new Posts();
+                    $post-> showPosts($_SESSION['user']);
+                ?>
+                
             </div>
             
         </div>

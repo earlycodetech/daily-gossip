@@ -77,6 +77,7 @@
             <p class="fs-3 fw-bold">Recent Posts</p>
 
             <div class="owl-carousel">
+                <!-- Start -->
                 <div class="item">
                     <div class="post-wrap">
                         <img src="assets/img/posts/news-1.jpg" alt="" class="img-fluid">
@@ -89,54 +90,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="post-wrap">
-                        <img src="assets/img/posts/news-1.jpg" alt="" class="img-fluid">
-                        <div class="overlay"></div>
-                        <div class="caption">
-                            <p class="fs-4 fw-bold">This is 2</p>
-                            <p class="fs-6">
-                                Date: 22nd March 2022
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="post-wrap">
-                        <img src="assets/img/posts/news-1.jpg" alt="" class="img-fluid">
-                        <div class="overlay"></div>
-                        <div class="caption">
-                            <p class="fs-4 fw-bold">This is 3</p>
-                            <p class="fs-6">
-                                Date: 22nd March 2022
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="post-wrap">
-                        <img src="assets/img/posts/news-1.jpg" alt="" class="img-fluid">
-                        <div class="overlay"></div>
-                        <div class="caption">
-                            <p class="fs-4 fw-bold">This is 4</p>
-                            <p class="fs-6">
-                                Date: 22nd March 2022
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="post-wrap">
-                        <img src="assets/img/posts/news-1.jpg" alt="" class="img-fluid">
-                        <div class="overlay"></div>
-                        <div class="caption">
-                            <p class="fs-4 fw-bold">This is 5</p>
-                            <p class="fs-6">
-                                Date: 22nd March 2022
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <!-- End -->
                
               </div>
         </div>

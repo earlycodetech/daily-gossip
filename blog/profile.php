@@ -51,7 +51,7 @@
         ?>
         <div class="card">
             <form action="../assets/includes/update.inc.php" method="post" enctype="multipart/form-data" class="card-body">
-                <img src="../assets/img/logo.png" class="w-25 rounded">
+                <img src="../assets/img/avatars/<?php echo $_SESSION['img']; ?>" class="w-25 rounded">
                 <input type="file" name="file" class="form-control my-2">
                 <button name="updatePic" class="btn btn-primary">Submit</button>
             </form>

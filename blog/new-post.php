@@ -43,7 +43,8 @@
     <?php include_once "../assets/includes/das-nav.php" ?>
     <!-- Main Content -->
     <main class="main-content">
-        <form class="card container p-2">
+        <form class="card container p-2" method="POST"  action="../assets/includes/post.inc.php" enctype="multipart/form-data">
+            <?php echo successMsg(); echo errorMsg(); ?>
             <h1>New Post</h1>
 
             <div class="row">
@@ -53,14 +54,14 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <label  class="form-label">Cover Image</label>
-                    <input type="file" name="title" placeholder="Title" class="form-control">
+                    <input type="file" name="file" accept="image/*" class="form-control">
                 </div>
                 <div class="col-12 mb-3">
                     <textarea name="post" id="editor1" style="height: 400px;" class="form-control"></textarea>
                 </div>
 
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Add Post</button>
+                    <button type="submit" name="newPost" class="btn btn-primary">Add Post</button>
                 </div>
             </div>
         </form>

@@ -18,7 +18,7 @@
                 <!-- Dropdown start-->
                 <div class="dropdown me-5">
                     <a class="navbar-brand fs-6 order-0 order-md-1 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../assets/img/posts/news-1.jpg" alt="avatar" width="40" height="40" class="rounded-circle">
+                        <img src="../assets/img/avatars/<?php echo $_SESSION['img']; ?>" alt="avatar" width="40" height="40" class="rounded-circle">
                         <span><?php echo $_SESSION['name']; ?></span>
                       </a>
                     <ul class="dropdown-menu">
@@ -46,7 +46,7 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end lh-lg flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">
+                                <a class="nav-link active" aria-current="page" href="dashboard">
                                      <span class="pe-4">Dashboard</span> 
                                      <i class="fa fa-book float-end"></i>
                                 </a>
