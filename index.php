@@ -1,8 +1,9 @@
 <?php
-    require "assets/includes/class.autoload.php";
+require "assets/includes/class.autoload.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,54 +20,25 @@
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="assets/lib/owl-carousel/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/lib/owl-carousel/css/owl.theme.default.min.css">
+    
 </head>
+
 <body>
     <!-- Navbar -->
-        <?php include_once "assets/includes/nav.inc.php"; ?>
-
+    <?php include_once "assets/includes/nav.inc.php"; ?>
+    
     <!-- Hero -->
     <section id="hero" class="mt-5">
+        
         <div class="container">
             <div class="row">
-                <a href="#" class="col-md-8 mb-3 ">
-                    <div class="post-wrap">
-                        <img src="assets/img/posts/news-1.jpg" class="img-fluid main-post h-100" alt="Trending">
-                        <div class="overlay"></div>
-                        <div class="caption">
-                            <p class="fs-2 fw-bold title">This is the Latest News</p>
-                            <p class="fs-5">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quibusdam blanditiis tempore at, dignissimos dolorem harum minus assumenda obcaecati repellat!...
-                            </p>
-                            <p class="fs-6">Date: 12th March 2022</p>
-                        </div>
-                    </div>
-                </a>
-                <div class="col-md-4 mb-2">
-                    <div class="row">
-                        <a href="#" class="col-12 mb-2">
-                            <div class="post-wrap">
-                                <img src="assets/img/posts/news-2.jpg" alt="" class="img-fluid side-post">
-                                 <div class="overlay"></div>
-                                 <div class="caption">
-                                    <p class="fs-4 fw-bold title">This is the Latest News</p>
-                                    <p class="fs-6">Date: 12th March 2022</p>
-                                 </div>   
-                            </div>
-                        </a>
-                        <a href="#" class="col-12 mb-2 post-wrap">
-                            <div class="post-wrap">
-                                <img src="assets/img/posts/news-2.jpg" alt="" class="img-fluid side-post">
-                                 <div class="overlay"></div>
-                                 <div class="caption">
-                                    <p class="fs-4 fw-bold title">This is the Latest News</p>
-                                    <p class="fs-6">Date: 12th March 2022</p>
-                                 </div>   
-                            </div>  
-                        </a>
-                    </div>
-                </div>
-            </div>
+                <?php
+                $blog = new Posts();
+                $blog->showTrendPost();
 
+                ?>
+
+            </div>
         </div>
     </section>
 
@@ -78,21 +50,12 @@
 
             <div class="owl-carousel">
                 <!-- Start -->
-                <div class="item">
-                    <div class="post-wrap">
-                        <img src="assets/img/posts/news-1.jpg" alt="" class="img-fluid">
-                        <div class="overlay"></div>
-                        <div class="caption">
-                            <p class="fs-4 fw-bold">This is 1</p>
-                            <p class="fs-6">
-                                Date: 22nd March 2022
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                $post = new Posts();
+                $post->showAllPosts();
+                ?>
                 <!-- End -->
-               
-              </div>
+            </div>
         </div>
     </section>
 
@@ -106,22 +69,23 @@
     <script>
         $('.owl-carousel').owlCarousel({
             center: true,
-            items:2,
-            loop:true,
-            margin:10,
-            nav:true,
-            responsive:{
-                0:{
-                    items:1
+            items: 2,
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
                 },
-                600:{
-                    items:3
+                600: {
+                    items: 3
                 },
-                1000:{
-                    items:3
+                1000: {
+                    items: 3
                 }
             }
         });
     </script>
 </body>
+
 </html>
