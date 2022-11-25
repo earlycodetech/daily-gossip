@@ -12,7 +12,7 @@
         }
         else {
             // When the url does not contains a string of classes
-          $path = "classes/";
+          $path = "../classes/";
         }
         
          
